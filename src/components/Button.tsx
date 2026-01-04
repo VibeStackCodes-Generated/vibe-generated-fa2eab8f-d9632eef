@@ -29,12 +29,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     ref
   ) => {
     const baseStyles =
-      'inline-flex items-center justify-center font-medium transition-all duration-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
+      'inline-flex items-center justify-center font-medium transition-all duration-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-95'
 
+    // Mobile-first sizing with responsive adjustments
     const sizeStyles = {
-      sm: 'px-3 py-1.5 text-sm',
-      md: 'px-4 py-2 text-base',
-      lg: 'px-6 py-3 text-lg',
+      sm: 'px-3 py-2 text-sm min-h-9 sm:min-h-8 sm:px-3 sm:py-1.5',
+      md: 'px-4 py-2.5 text-sm min-h-10 sm:min-h-10 sm:px-4 sm:py-2 sm:text-base',
+      lg: 'px-5 py-3 text-base min-h-11 sm:min-h-11 sm:px-6 sm:py-3 sm:text-lg',
     }
 
     const variantStyles = {

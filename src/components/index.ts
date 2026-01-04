@@ -98,6 +98,24 @@ export type { AlertProps, AlertVariant } from './Alert'
 export { Spinner } from './Spinner'
 export type { SpinnerProps, SpinnerSize } from './Spinner'
 
+// Responsive Layout Components (Mobile-First Design)
+export {
+  ResponsiveContainer,
+  ResponsiveGrid,
+  ResponsiveFlex,
+  ResponsiveSection,
+  ResponsiveHeading,
+  ResponsiveStack,
+} from './ResponsiveLayout'
+export type {
+  ContainerProps,
+  ResponsiveGridProps,
+  ResponsiveFlexProps,
+  ResponsiveSectionProps,
+  ResponsiveHeadingProps,
+  ResponsiveStackProps,
+} from './ResponsiveLayout'
+
 // Layout/Utility Components
 export { ErrorBoundary } from './error-boundary'
 export { VibeStackBadge } from './vibestack-badge'

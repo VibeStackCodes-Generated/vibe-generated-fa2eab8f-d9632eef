@@ -10,6 +10,10 @@ import {
   Badge,
   Alert,
   Spinner,
+  ResponsiveContainer,
+  ResponsiveGrid,
+  ResponsiveSection,
+  ResponsiveStack,
 } from '@/components'
 
 /**
@@ -44,19 +48,19 @@ export function ComponentShowcase() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8 dark:from-gray-950 dark:to-gray-900">
-      <div className="mx-auto max-w-6xl">
-        {/* Header */}
-        <div className="mb-12">
-          <h1 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-950 dark:to-gray-900">
+      <ResponsiveContainer maxWidth="2xl">
+        {/* Header - Mobile First */}
+        <div className="section-spacing">
+          <h1 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white sm:mb-4 sm:text-3xl md:text-4xl lg:text-5xl">
             UI Component Library
           </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400">
+          <p className="text-sm text-gray-600 dark:text-gray-400 sm:text-base md:text-lg">
             Explore our collection of reusable, accessible, and beautiful UI components
           </p>
         </div>
 
-        <div className="grid gap-8">
+        <div className="gap-responsive grid grid-cols-1 md:grid-cols-1 lg:gap-8">
           {/* Button Examples */}
           <Card variant="elevated">
             <CardHeader>
@@ -66,13 +70,13 @@ export function ComponentShowcase() {
               </p>
             </CardHeader>
             <CardBody>
-              <div className="space-y-6">
+              <ResponsiveStack spacing="lg">
                 {/* Primary Buttons */}
                 <div>
-                  <h3 className="mb-3 text-sm font-semibold text-gray-700 dark:text-gray-300">
+                  <h3 className="mb-2 text-xs font-semibold text-gray-700 dark:text-gray-300 sm:mb-3 sm:text-sm">
                     Primary Variant
                   </h3>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex-responsive">
                     <Button size="sm">Small Button</Button>
                     <Button size="md">Medium Button</Button>
                     <Button size="lg">Large Button</Button>
@@ -87,10 +91,10 @@ export function ComponentShowcase() {
 
                 {/* Secondary Buttons */}
                 <div>
-                  <h3 className="mb-3 text-sm font-semibold text-gray-700 dark:text-gray-300">
+                  <h3 className="mb-2 text-xs font-semibold text-gray-700 dark:text-gray-300 sm:mb-3 sm:text-sm">
                     Secondary Variant (Accent)
                   </h3>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex-responsive">
                     <Button variant="secondary" size="sm">
                       Small Button
                     </Button>
@@ -105,10 +109,10 @@ export function ComponentShowcase() {
 
                 {/* Outline Buttons */}
                 <div>
-                  <h3 className="mb-3 text-sm font-semibold text-gray-700 dark:text-gray-300">
+                  <h3 className="mb-2 text-xs font-semibold text-gray-700 dark:text-gray-300 sm:mb-3 sm:text-sm">
                     Outline Variant
                   </h3>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex-responsive">
                     <Button variant="outline" size="sm">
                       Small Button
                     </Button>
@@ -123,10 +127,10 @@ export function ComponentShowcase() {
 
                 {/* Ghost Buttons */}
                 <div>
-                  <h3 className="mb-3 text-sm font-semibold text-gray-700 dark:text-gray-300">
+                  <h3 className="mb-2 text-xs font-semibold text-gray-700 dark:text-gray-300 sm:mb-3 sm:text-sm">
                     Ghost Variant
                   </h3>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex-responsive">
                     <Button variant="ghost" size="sm">
                       Small Button
                     </Button>
@@ -141,10 +145,10 @@ export function ComponentShowcase() {
 
                 {/* Danger Buttons */}
                 <div>
-                  <h3 className="mb-3 text-sm font-semibold text-gray-700 dark:text-gray-300">
+                  <h3 className="mb-2 text-xs font-semibold text-gray-700 dark:text-gray-300 sm:mb-3 sm:text-sm">
                     Danger Variant
                   </h3>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex-responsive">
                     <Button variant="danger" size="sm">
                       Delete
                     </Button>
@@ -156,20 +160,20 @@ export function ComponentShowcase() {
                     </Button>
                   </div>
                 </div>
-              </div>
+              </ResponsiveStack>
             </CardBody>
           </Card>
 
           {/* Card Examples */}
           <Card variant="elevated">
             <CardHeader>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Card Component</h2>
-              <p className="mt-1 text-gray-600 dark:text-gray-400">
+              <h2 className="text-lg font-bold text-gray-900 dark:text-white sm:text-xl md:text-2xl">Card Component</h2>
+              <p className="mt-1 text-xs text-gray-600 dark:text-gray-400 sm:text-sm md:text-base">
                 Container for grouping related content
               </p>
             </CardHeader>
             <CardBody>
-              <div className="grid gap-6 md:grid-cols-3">
+              <ResponsiveGrid columns={3} gap="md">
                 {/* Elevated Card */}
                 <Card variant="elevated" padding="md">
                   <CardHeader>
@@ -226,20 +230,20 @@ export function ComponentShowcase() {
                     </Button>
                   </CardFooter>
                 </Card>
-              </div>
+              </ResponsiveGrid>
             </CardBody>
           </Card>
 
           {/* Input Examples */}
           <Card variant="elevated">
             <CardHeader>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Input Component</h2>
-              <p className="mt-1 text-gray-600 dark:text-gray-400">
+              <h2 className="text-lg font-bold text-gray-900 dark:text-white sm:text-xl md:text-2xl">Input Component</h2>
+              <p className="mt-1 text-xs text-gray-600 dark:text-gray-400 sm:text-sm md:text-base">
                 Form inputs with validation and helper text
               </p>
             </CardHeader>
             <CardBody>
-              <div className="grid gap-6 md:grid-cols-2">
+              <ResponsiveGrid columns={2} gap="md">
                 {/* Outlined Input */}
                 <div>
                   <h3 className="mb-4 text-sm font-semibold text-gray-700 dark:text-gray-300">
@@ -289,14 +293,14 @@ export function ComponentShowcase() {
                     error="Username is already taken"
                   />
                 </div>
-              </div>
+              </ResponsiveGrid>
             </CardBody>
           </Card>
 
           {/* Badge Examples */}
           <Card variant="elevated">
             <CardHeader>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Badge Component</h2>
+              <h2 className="text-lg font-bold text-gray-900 dark:text-white sm:text-xl md:text-2xl">Badge Component</h2>
               <p className="mt-1 text-gray-600 dark:text-gray-400">
                 Labels and tags with multiple variants
               </p>
@@ -354,8 +358,8 @@ export function ComponentShowcase() {
           {/* Alert Examples */}
           <Card variant="elevated">
             <CardHeader>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Alert Component</h2>
-              <p className="mt-1 text-gray-600 dark:text-gray-400">
+              <h2 className="text-lg font-bold text-gray-900 dark:text-white sm:text-xl md:text-2xl">Alert Component</h2>
+              <p className="mt-1 text-xs text-gray-600 dark:text-gray-400 sm:text-sm md:text-base">
                 Notifications and messages with multiple states
               </p>
             </CardHeader>
@@ -380,8 +384,8 @@ export function ComponentShowcase() {
           {/* Spinner Examples */}
           <Card variant="elevated">
             <CardHeader>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Spinner Component</h2>
-              <p className="mt-1 text-gray-600 dark:text-gray-400">
+              <h2 className="text-lg font-bold text-gray-900 dark:text-white sm:text-xl md:text-2xl">Spinner Component</h2>
+              <p className="mt-1 text-xs text-gray-600 dark:text-gray-400 sm:text-sm md:text-base">
                 Loading indicators with various sizes and colors
               </p>
             </CardHeader>
@@ -435,8 +439,8 @@ export function ComponentShowcase() {
           {/* Modal Example */}
           <Card variant="elevated">
             <CardHeader>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Modal Component</h2>
-              <p className="mt-1 text-gray-600 dark:text-gray-400">
+              <h2 className="text-lg font-bold text-gray-900 dark:text-white sm:text-xl md:text-2xl">Modal Component</h2>
+              <p className="mt-1 text-xs text-gray-600 dark:text-gray-400 sm:text-sm md:text-base">
                 Dialog for displaying content and forms
               </p>
             </CardHeader>
@@ -453,15 +457,15 @@ export function ComponentShowcase() {
           {/* Integration Example */}
           <Card variant="elevated">
             <CardHeader>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+              <h2 className="text-lg font-bold text-gray-900 dark:text-white sm:text-xl md:text-2xl">
                 Form Integration Example
               </h2>
-              <p className="mt-1 text-gray-600 dark:text-gray-400">
+              <p className="mt-1 text-xs text-gray-600 dark:text-gray-400 sm:text-sm md:text-base">
                 Combining multiple components for a contact form
               </p>
             </CardHeader>
             <CardBody>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="form-spacing">
                 <Input
                   label="Name"
                   name="name"
@@ -504,7 +508,7 @@ export function ComponentShowcase() {
             </CardBody>
           </Card>
         </div>
-      </div>
+      </ResponsiveContainer>
 
       {/* Modal */}
       <Modal
